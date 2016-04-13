@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>welcome</title>
+
+    <link href="www/lib/angular-material/angular-material.min.css" rel="stylesheet">
+    <link href="www/lib/boostrap/bootstrap.min.css" rel="stylesheet">
+    <link href="www/css/menu.css" rel="stylesheet">
+
+    <!-- libs -->
+    <script src="www/lib/angular/angular.min.js"></script>
+    <script src="www/lib/angular/angular-animate.min.js"></script>
+    <script src="www/lib/angular-ui/angular-ui-router.min.js"></script>
+    <script src="www/lib/angular-aria/angular-aria.min.js"></script>
+    <script src="www/lib/angular-material/angular-material.min.js"></script>
+
+    <!-- pouchdb js-->
+    <script src="www/lib/pouchdb/pouchdb-5.0.0.min.js"></script>
+    <script src="www/lib/pouchdb/pouchdb.find.min.js"></script>
+
+    <!-- your app's js -->
+    <script src="www/js/app.js"></script>
+    <script src="www/js/configRouter.js"></script>
+    <script src="www/js/common/services.js"></script>
+    <script src="www/js/controllers/loginControllers.js"></script>
+
+</head>
+<body ng-app="starter">
+    <div ui-view="mainView" style="height: 96%"></div>
+</body>
+</html>
