@@ -4,6 +4,7 @@ import cn.com.cookie.common.bean.DataRegiste;
 import cn.com.cookie.common.bean.InfoReturn;
 import cn.com.cookie.common.reference.ResponseCode;
 import cn.com.cookie.common.service.AppUserEntityService;
+import cn.com.cookie.common.utils.JPushHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 
 @Controller
@@ -20,6 +22,12 @@ public class UserController {
 
     @Autowired
     AppUserEntityService appUserEntityService;
+
+    @PostConstruct
+    public void send(){
+        System.out.println("开始");
+        boolean isSendOk = JPushHelper.sendWarnMsgToAll("今天还没写日志？点我开始填写。");
+    }
 
     /**
      * 注册用户,将用户信息写入app_user表中，默认角色为游客

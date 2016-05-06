@@ -31,7 +31,7 @@ public class ScheduleFileOperation {
     /**
      * 从适配器inbox文件夹移动文件到ftp共享文件夹下，不移动适配器inbox目录下的文件
      */
-    @Scheduled(cron = "1/5 * * * * ?")
+    //@Scheduled(cron = "1/5 * * * * ?")
     public void moveFolderFromSwapInbox(){
         File[] filesList = FileHelper.getFolderFilesSort(swapInboxFilePath,null,FileHelper.SORTBY_LASTMOD);
         logger.debug("适配器--开始移动文件夹，文件数："+filesList.length);
@@ -55,7 +55,7 @@ public class ScheduleFileOperation {
     /**
      * 从ftp共享文件夹outbox移动文件夹到适配器outbox文件夹下
      */
-    @Scheduled(cron = "1/10 * * * * ?")
+    //@Scheduled(cron = "1/10 * * * * ?")
     public void moveFolderToSwapOutbox(){
         File[] filesList = FileHelper.getFolderFilesSort(ftpOutboxFilePath,null,FileHelper.SORTBY_LASTMOD);
         logger.debug("ftp--开始移动文件夹，文件数："+filesList.length);

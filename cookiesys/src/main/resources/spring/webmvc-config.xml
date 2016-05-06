@@ -13,25 +13,8 @@
 	 http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx-4.1.xsd"
-	default-lazy-init="true">
-	<!-- 开启spring mvc注解 -->
-	<mvc:annotation-driven>
-		<mvc:message-converters>
-			<bean class="cn.com.cookie.spring.tools.UTF8StringHttpMessageConverter">
-			</bean>
-			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
-		</mvc:message-converters>
-		<!-- 启用@AuthenticationPrincipal注解 -->
-		<mvc:argument-resolvers>
-			<bean class="org.springframework.security.web.bind.support.AuthenticationPrincipalArgumentResolver" />
-		</mvc:argument-resolvers>
-	</mvc:annotation-driven>
-	<!-- begin 此处设置用来直接访问静态资源文件 -->
-	<!-- end -->
-	<!-- 使用注解自动注册bean，在该文件中只扫描@Controller -->
-	<con:component-scan base-package="cn.com.cookie.**.controllers" >
-		<con:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-	</con:component-scan>
+	>
+
 	
 	<!-- 使用注解自动注册bean，在该文件中不扫描@Controller -->
 	<con:component-scan base-package="cn.com.cookie.**.service">

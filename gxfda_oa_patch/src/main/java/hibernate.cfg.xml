@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:oracle:thin:@127.0.0.1:2521:FDATEST</property>
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <mapping class="cn.com.cookie.gxfda.oa.entities.OaPendingHandle"/>
+        <mapping class="cn.com.cookie.gxfda.oa.entities.OaPendingHandleDts"/>
+        <mapping class="cn.com.cookie.gxfda.oa.entities.WfFloCurno"/>
+        <mapping class="cn.com.cookie.gxfda.oa.entities.WfFloHisno"/>
+        <mapping class="cn.com.cookie.gxfda.oa.entities.WfFloInstDataitem"/>
+        <mapping class="cn.com.cookie.gxfda.oa.entities.WfFloInstSon"/>
+        <mapping class="cn.com.cookie.gxfda.oa.entities.WfFloInstno"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

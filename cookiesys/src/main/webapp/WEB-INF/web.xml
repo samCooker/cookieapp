@@ -57,7 +57,6 @@
   <listener>
     <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
   </listener>
-  <servlet>
     <!-- 设置编码 -->
     <filter>
       <description>spring mvc框架解决中文乱码过滤器。</description>
@@ -80,6 +79,7 @@
     <!-- end -->
 
     <!-- servlet -->
+  <servlet>
     <servlet-name>mainentry</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
