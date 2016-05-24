@@ -1,9 +1,7 @@
 package task;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import utils.FileHelper;
 
@@ -27,6 +25,12 @@ public class ScheduleFileOperation {
     private String ftpOutboxFilePath;
     @Value("${swap.outbox.filepath}")
     private String swapOutboxFilePath;
+
+    @Value("${check.swap.filepath}")
+    private String checkSwapFileFolder;
+    @Value("${error.fileFolder}")
+    private String errorFileFolder;
+
 
     /**
      * 从适配器inbox文件夹移动文件到ftp共享文件夹下，不移动适配器inbox目录下的文件
@@ -73,5 +77,38 @@ public class ScheduleFileOperation {
                 logger.debug("ftp--移动文件："+file.getName()+" 成功。");
             }
         }
+    }
+
+    //@Scheduled(cron = "1/15 * * * * ?")
+    public void deleteErrorFile(){
+        File[] filesList = FileHelper.getFolderFilesSort(checkSwapFileFolder,null,FileHelper.SORTBY_LASTMOD);
+        for (File file : filesList){
+            if(file.isDirectory()){
+                boolean deleteFlag=true;
+                File[] subFiles=file.listFiles();
+                for (File subFile : subFiles){
+                    if(this.isLastIndexOf(subFile.getPath(),".xml")){
+                        deleteFlag=false;
+                        break ;
+                    }
+                }
+                try {
+                    if(deleteFlag) {
+                        FileHelper.moveFolder(file.getPath(), errorFileFolder);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private static boolean isLastIndexOf(String src,String target){
+        return src.lastIndexOf(target)!=-1;
+    }
+
+    public static void main(String[] args){
+        boolean b=isLastIndexOf("adsfsadf.xml",".xml");
+        System.out.println(b);
     }
 }

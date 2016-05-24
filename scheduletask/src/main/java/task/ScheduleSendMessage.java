@@ -1,24 +1,19 @@
 package task;
 
 import org.apache.http.NameValuePair;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import utils.CalendarHelper;
 import utils.HttpClientHelper;
 import utils.JPushHelper;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.concurrent.BlockingQueue;
 
 /**
  * Created by Cookie on 2016/5/1.
@@ -40,7 +35,7 @@ public class ScheduleSendMessage {
     /**
      * 每天17:55 发送一次
      */
-    @Scheduled(cron = "0 55 17 * * ?")
+    //@Scheduled(cron = "0 55 17 * * ?")
     //@Scheduled(cron = "5/5 * * * * ?")
     public void sendWarnMessage(){
         Calendar calendar =Calendar.getInstance();
@@ -54,7 +49,7 @@ public class ScheduleSendMessage {
     /**
      * 每天18:30 19:30 22:30 发送一次
      */
-    @Scheduled(cron = "0 30 18,19,22 * * ?")
+    //@Scheduled(cron = "0 30 18,19,22 * * ?")
     //@Scheduled(cron = "5/10 * * * * ?")
     public void sendSecondWarnMessage(){
         Calendar calendar =Calendar.getInstance();

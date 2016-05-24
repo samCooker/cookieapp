@@ -14,6 +14,7 @@ import cn.jpush.api.push.model.notification.Notification;
  */
 public class JPushHelper {
 
+    //ccworklog app key
     private static final String APK_KEY = "3c7b423687567f149ad9c627";
     private static final String MASTER_SECRET = "f6c4e188328976b46e8c521b";
 
