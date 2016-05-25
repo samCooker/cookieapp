@@ -11,7 +11,7 @@
       contextConfigLocation
     </param-name>
     <param-value>
-      classpath*:spring/*-ctx.xml
+      classpath*:spring/**/*-ctx.xml
     </param-value>
   </context-param>
 
@@ -55,7 +55,7 @@
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath*:/spring/webmvc-config*.xml</param-value>
+      <param-value>classpath*:/spring/dispatcher-servlet.xml</param-value>
     </init-param>
     <init-param>
       <param-name>throwExceptionIfNoHandlerFound</param-name>
@@ -63,9 +63,13 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
-
   <servlet-mapping>
     <servlet-name>mainentry</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+  <!---->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
 </web-app>

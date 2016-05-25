@@ -5,7 +5,6 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import utils.FileHelper;
 import utils.MD5Helper;
@@ -101,7 +100,7 @@ public class ScheduleGenerateXmlFile {
         }
     }
 
-    @Scheduled(cron = "5/10 1/30  * * * ?")
+    //@Scheduled(cron = "5/10 1/30  * * * ?")
     public void generateReceiveXmlFile(){
         logger.debug("开始生成接收xml文件");
         BufferedWriter writer = null;
