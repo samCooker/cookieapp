@@ -1,6 +1,6 @@
 package cn.com.cookie.spring.security;
 
-import cn.com.cookie.spring.bean.LoginUser;
+import cn.com.cookie.sysuser.bean.LoginUser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;

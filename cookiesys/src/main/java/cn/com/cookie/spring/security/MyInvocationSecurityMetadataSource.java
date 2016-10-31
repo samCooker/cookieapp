@@ -1,8 +1,8 @@
 package cn.com.cookie.spring.security;
 
-import cn.com.cookie.common.entity.ResourceEntity;
+import cn.com.cookie.sysuser.entity.ResourceEntity;
 import cn.com.cookie.common.reference.AppValid;
-import cn.com.cookie.common.repository.ResourceEntityRepository;
+import cn.com.cookie.sysuser.repository.ResourceEntityRepository;
 import cn.com.cookie.spring.tools.AntUrlPathMatcher;
 import cn.com.cookie.spring.tools.UrlMatcher;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,8 +40,11 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
             for (ResourceEntity resource : resourceEntityList) {
                 String name = resource.getAuthorityName();
                 String url = resource.getResUrl();
+                value = resourceMap.get(url);
+                if(value==null){
+                    value = new ArrayList<>();
+                }
                 ca = new SecurityConfig(name);
-                value = new ArrayList<>();
                 value.add(ca);
                 resourceMap.put(url, value);
             }

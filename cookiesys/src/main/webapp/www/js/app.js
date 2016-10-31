@@ -12,7 +12,7 @@ appModule
     })
     .factory('appConfig', function () {
         var host = 'localhost';
-        var port = '8080';
+        var port = '28080';
 
         return {
             getHost: getHostFun//获取http请求url
@@ -23,7 +23,7 @@ appModule
          * @returns {string}
          */
         function getHostFun() {
-            return 'http://' + host + ':' + port + '/cookieapp/';
+            return 'http://' + host + ':' + port + '/cookiesys/';
         }
 
     })

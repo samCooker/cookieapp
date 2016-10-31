@@ -50,7 +50,7 @@
          */
         function loginFun(data) {
             var delay = $q.defer();
-            $http.post(appConfig.getHost() + 'login_check', data).success(function (data) {
+            $http.post(appConfig.getHost() + 'formlogin', data).success(function (data) {
                 delay.resolve(data);
             }).error(function (error) {
                 console.log(error);

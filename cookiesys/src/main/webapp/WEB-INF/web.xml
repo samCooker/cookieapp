@@ -11,7 +11,7 @@
       contextConfigLocation
     </param-name>
     <param-value>
-       classpath*:spring/**/*-config.xml
+      classpath*:config/**/*-config.xml
     </param-value>
   </context-param>
 
@@ -51,7 +51,7 @@
     <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
   <listener>
-    <description>spring 配置文件加载监听器。</description>
+    <description>config 配置文件加载监听器。</description>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
   <listener>
@@ -59,7 +59,7 @@
   </listener>
     <!-- 设置编码 -->
     <filter>
-      <description>spring mvc框架解决中文乱码过滤器。</description>
+      <description>config mvc框架解决中文乱码过滤器。</description>
       <filter-name>CharacterEncodingFilter</filter-name>
       <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
       <init-param>
@@ -84,7 +84,7 @@
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath*:/spring/dispatcher-servlet.xml</param-value>
+      <param-value>classpath*:/config/dispatcher-servlet.xml</param-value>
     </init-param>
     <init-param>
       <param-name>throwExceptionIfNoHandlerFound</param-name>
@@ -98,9 +98,9 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   <!-- 会话超时设置 -->
-  <!--<session-config>-->
-  <!--<session-timeout>30</session-timeout>-->
-  <!--</session-config>-->
+  <session-config>
+    <session-timeout>90</session-timeout>
+  </session-config>
   <!--系统欢迎页面 -->
   <welcome-file-list>
     <welcome-file>www/index.html</welcome-file>

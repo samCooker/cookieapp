@@ -77,7 +77,7 @@
       <artifactId>jackson-annotations</artifactId>
       <version>${jackson-annotations.version}</version>
     </dependency>
-    <!-- spring framework data jpa begin -->
+    <!-- config framework data jpa begin -->
     <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-jpa</artifactId>
@@ -104,8 +104,8 @@
         </exclusion>
       </exclusions>
     </dependency>
-    <!-- spring framework data jpa end -->
-    <!-- spring framework begin -->
+    <!-- config framework data jpa end -->
+    <!-- config framework begin -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
@@ -172,8 +172,8 @@
       <artifactId>spring-webmvc</artifactId>
       <version>${org.springframework-version}</version>
     </dependency>
-    <!-- spring framework end -->
-    <!-- spring framework security begin -->
+    <!-- config framework end -->
+    <!-- config framework security begin -->
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-config</artifactId>
@@ -200,7 +200,7 @@
       <artifactId>spring-security-web</artifactId>
       <version>${org.springframework.security-version}</version>
     </dependency>
-    <!-- spring framework security end -->
+    <!-- config framework security end -->
     <!-- hibernate begin -->
     <dependency>
       <groupId>org.hibernate</groupId>

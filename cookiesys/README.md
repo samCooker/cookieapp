@@ -1,5 +1,5 @@
 # cookieknowledge
-a simple spring mvc project
+a simple config mvc project
 
 #关于java文件命名
   1. bean 

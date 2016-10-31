@@ -8,10 +8,15 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <!-- DB schema will be updated if needed -->
         <!--<property name="hbm2ddl.auto">update</property>-->
-        <mapping class="cn.com.cookie.common.entity.AppUserEntity"/>
-        <mapping class="cn.com.cookie.common.entity.ResourceEntity"/>
-        <mapping class="cn.com.cookie.common.entity.RoleEntity"/>
-        <mapping class="cn.com.cookie.common.entity.UserRole"/>
-        <mapping class="cn.com.cookie.common.entity.RoleRes"/>
+        <mapping class="cn.com.cookie.sysuser.entity.AppUserEntity"/>
+        <mapping class="cn.com.cookie.sysuser.entity.ResourceEntity"/>
+        <mapping class="cn.com.cookie.sysuser.entity.RoleEntity"/>
+        <mapping class="cn.com.cookie.sysuser.entity.UserRole"/>
+        <mapping class="cn.com.cookie.sysuser.entity.RoleRes"/>
+        <mapping class="cn.com.cookie.sysuser.AppUserEntity"/>
+        <mapping class="cn.com.cookie.sysuser.ResourceEntity"/>
+        <mapping class="cn.com.cookie.sysuser.RoleEntity"/>
+        <mapping class="cn.com.cookie.sysuser.RoleResEntity"/>
+        <mapping class="cn.com.cookie.sysuser.UserRoleEntity"/>
     </session-factory>
 </hibernate-configuration>
